@@ -2,6 +2,9 @@
 
 The SmartFormat Feed generator for Node.js
 
+[jpmonette/feed](https://github.com/jpmonette/feed) is the base of this module.  
+I really appreciate cooperation of jpmonette/feed.
+
 ## Notice
 
 I am not a related person of the SmartNews operating company, but a well-meaning external developer.
