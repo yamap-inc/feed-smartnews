@@ -16,18 +16,16 @@ export interface SNFItem {
     url: string;
     caption: string;
   };
-  "item.media:status"?: string;
-  "item.snf:advertisement"?: {
-    "snf:sponsoredLink": [
-      {
-        link: string;
-        title?: string;
-        thumbnail?: string;
-        advertiser: string;
-      }
-    ];
+  "media:status"?: string;
+  "snf:advertisement"?: {
+    "snf:sponsoredLink": {
+      link: string;
+      title?: string;
+      thumbnail?: string;
+      advertiser: string;
+    }[];
   };
-  "item.snf:analytics"?: string;
+  "snf:analytics"?: string;
 }
 
 export interface SNFFeedOptions {

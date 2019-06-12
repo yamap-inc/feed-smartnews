@@ -1,6 +1,6 @@
 import * as convert from "xml-js";
 import { SNFFeed } from "./feed";
-import { SNFItem, SNFFeedOptions } from "./typings";
+import { SNFItem } from "./typings";
 
 export default (ins: SNFFeed) => {
   const { options } = ins;
@@ -44,7 +44,7 @@ export default (ins: SNFFeed) => {
   /**
    * Channel Logo
    */
-  if (options["snf:logo"].url) {
+  if (options["snf:logo"] && options["snf:logo"].url) {
     base.rss.channel["snf:logo"] = {
       _attributes: {
         url: options["snf:logo"].url
@@ -94,7 +94,7 @@ export default (ins: SNFFeed) => {
       item["dc:language"] = { _text: entry["dc:language"] };
     }
 
-    if (entry["media:thumbnail"].url) {
+    if (entry["media:thumbnail"] && entry["media:thumbnail"].url) {
       item["media:thumbnail"] = {
         _attributes: {
           url: entry["media:thumbnail"].url
@@ -102,7 +102,7 @@ export default (ins: SNFFeed) => {
       };
     }
 
-    if (entry["snf:video"].url) {
+    if (entry["snf:video"] && entry["snf:video"].url) {
       item["snf:video"] = {
         _attributes: {
           url: entry["snf:video"].url,
@@ -115,11 +115,15 @@ export default (ins: SNFFeed) => {
       item["media:status"] = { _text: entry["media:status"] };
     }
 
-    if (entry["snf:advertisement"].length !== 0) {
+    if (
+      entry["snf:advertisement"] &&
+      entry["snf:advertisement"]["snf:sponsoredLink"] &&
+      entry["snf:advertisement"]["snf:sponsoredLink"].length !== 0
+    ) {
       item["snf:advertisement"] = {
         "snf:sponsoredLink": []
       };
-      for (const adv of entry["snf:advertisement"]) {
+      for (const adv of entry["snf:advertisement"]["snf:sponsoredLink"]) {
         let sponsoredLink: any = {
           _attributes: {
             link: adv.link,
