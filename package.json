@@ -1,6 +1,6 @@
 {
   "name": "feed-smartnews",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "The SmartFormat Feed generator for Node.js",
   "main": "lib/feed.js",
   "types": "lib/feed.d.ts",
@@ -8,7 +8,7 @@
   "author": "up-tri <contact@up-tri.me>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf lib/ && mkdir lib && tsc",
+    "build": "tsc",
     "install": "npm run build",
     "prepublish": "npm run build"
   },
