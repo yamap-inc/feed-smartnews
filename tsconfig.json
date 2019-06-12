@@ -1,13 +1,8 @@
 {
   "compilerOptions": {
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
     "baseUrl": ".",
     "declaration": true,
     "module": "commonjs",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
     "outDir": "./lib",
     "removeComments": true,
     "sourceMap": true,
