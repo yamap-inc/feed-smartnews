@@ -1,6 +1,6 @@
 {
   "name": "feed-smartnews",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "The SmartFormat Feed generator for Node.js",
   "main": "lib/feed.js",
   "types": "lib/feed.d.ts",
