@@ -1,8 +1,8 @@
 {
   "name": "feed-smartnews",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "The SmartFormat Feed generator for Node.js",
-  "main": "lib/smartnews.js",
+  "main": "lib/feed.js",
   "types": "lib/feed.d.ts",
   "repository": "https://github.com/up-tri/feed-smartnews.git",
   "author": "up-tri <contact@up-tri.me>",
@@ -16,8 +16,6 @@
     "feed": "^3.0.0"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^5.2.0",
-    "source-map-loader": "^0.2.3",
     "typescript": "^3.0.1"
   }
 }
