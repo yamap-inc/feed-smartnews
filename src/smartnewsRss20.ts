@@ -67,7 +67,7 @@ export default (ins: SNFFeed) => {
         _text: entry.link
       },
       pubDate: {
-        _text: entry.pubDate.toUTCString()
+        _text: entry.pubDate ? entry.pubDate.toUTCString() : new Date().toUTCString()
       },
       "content:encoded": {
         _cdata: entry["content:encoded"]
@@ -141,26 +141,6 @@ export default (ins: SNFFeed) => {
 
         item["snf:advertisement"]["snf:sponsoredLink"].push(sponsoredLink);
       }
-    }
-
-    if (entry.guid) {
-      item.guid = { _cdata: entry.guid };
-    }
-
-    if (entry.guid) {
-      item.guid = { _cdata: entry.guid };
-    }
-
-    if (entry.guid) {
-      item.guid = { _cdata: entry.guid };
-    }
-
-    if (entry.guid) {
-      item.guid = { _cdata: entry.guid };
-    }
-
-    if (entry.guid) {
-      item.guid = { _cdata: entry.guid };
     }
 
     base.rss.channel.item.push(item);
