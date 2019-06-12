@@ -44,7 +44,7 @@ export default (ins: SNFFeed) => {
   /**
    * Channel Logo
    */
-  if (options["snf:logo"] && options["snf:logo"].url) {
+  if (options["snf:logo"] !== undefined && options["snf:logo"].url) {
     base.rss.channel["snf:logo"] = {
       _attributes: {
         url: options["snf:logo"].url
@@ -94,7 +94,7 @@ export default (ins: SNFFeed) => {
       item["dc:language"] = { _text: entry["dc:language"] };
     }
 
-    if (entry["media:thumbnail"] && entry["media:thumbnail"].url) {
+    if (entry["media:thumbnail"] !== undefined && entry["media:thumbnail"].url) {
       item["media:thumbnail"] = {
         _attributes: {
           url: entry["media:thumbnail"].url
@@ -102,7 +102,7 @@ export default (ins: SNFFeed) => {
       };
     }
 
-    if (entry["snf:video"] && entry["snf:video"].url) {
+    if (entry["snf:video"] !== undefined && entry["snf:video"].url) {
       item["snf:video"] = {
         _attributes: {
           url: entry["snf:video"].url,
@@ -116,8 +116,8 @@ export default (ins: SNFFeed) => {
     }
 
     if (
-      entry["snf:advertisement"] &&
-      entry["snf:advertisement"]["snf:sponsoredLink"] &&
+      entry["snf:advertisement"] !== undefined &&
+      entry["snf:advertisement"]["snf:sponsoredLink"] !== undefined &&
       entry["snf:advertisement"]["snf:sponsoredLink"].length !== 0
     ) {
       item["snf:advertisement"] = {
