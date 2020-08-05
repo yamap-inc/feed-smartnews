@@ -117,7 +117,7 @@ export default (ins: SNFFeed) => {
 
     if (entry["snf:analytics"]) {
       item["snf:analytics"] = {
-        _cdata: entry["snf:analytics"];
+        _cdata: entry["snf:analytics"]
       };
     }
 
