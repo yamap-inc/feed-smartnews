@@ -115,6 +115,10 @@ export default (ins: SNFFeed) => {
       item["media:status"] = { _text: entry["media:status"] };
     }
 
+    if (entry["snf:analytics"]) {
+      item["snf:analytics"] = entry["snf:analytics"];
+    }
+
     if (
       entry["snf:advertisement"] !== undefined &&
       entry["snf:advertisement"]["snf:sponsoredLink"] !== undefined &&
