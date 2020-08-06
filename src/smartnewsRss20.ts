@@ -45,11 +45,14 @@ export default (ins: SNFFeed) => {
    * Channel Logo
    */
   if (options["snf:logo"] !== undefined && options["snf:logo"].url) {
-    base.rss.channel["snf:logo"] = {
-      _attributes: {
-        url: options["snf:logo"].url
-      }
-    };
+    base.rss.channel["snf:logo"] = { url: { _text: options["snf:logo"].url } };
+  }
+
+  /**
+   * Darkmode Logo
+   */
+  if (options["snf:darkModeLogo"] !== undefined && options["snf:darkModeLogo"].url) {
+    base.rss.channel["snf:darkModeLogo"] = { url: { _text: options["snf:darkModeLogo"].url } };
   }
 
   /**
